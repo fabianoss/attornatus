@@ -9,10 +9,11 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
+
 @Validated
 @RestController
-@RequestMapping(value="/v1/pessoa")
-public class PessoaController {
+@RequestMapping(value="/v1/endereco")
+public class EnderecoController {
 
 
     @Autowired

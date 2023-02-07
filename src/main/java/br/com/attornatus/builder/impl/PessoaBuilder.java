@@ -73,4 +73,15 @@ public class PessoaBuilder implements Builder<PessoaDTO, Pessoa> {
         dtos.stream().forEach(d -> listToDomain.add(toDomain(d)));
         return listToDomain;
     }
+
+    @Override
+    public void toUpdated(PessoaDTO dto, Pessoa updated) {
+        if(updated == null || dto == null){
+            return;
+        }
+        updated.setNome(dto.getNome());
+        updated.setDataNascimento(dto.getDataNascimento());
+    }
+
+
 }

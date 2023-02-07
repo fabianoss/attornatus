@@ -12,6 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @Transactional
@@ -42,5 +43,23 @@ public class PessoaService {
     public PessoaDTO create(PessoaDTO dto){
         Pessoa domain = PessoaBuilder.getInstance().toDomain(dto);
         return PessoaBuilder.getInstance().toDto(repository.save(domain));
+    }
+
+    public void update(Long idPessoa, PessoaDTO dto){
+        Optional<Pessoa> opt = repository.findById(idPessoa);
+        if(opt.isEmpty()){
+            throw new PessoaException(Arrays.asList("IdPessoa não encontrado!"));
+        }
+        Pessoa updated = opt.get();
+        PessoaBuilder.getInstance().toUpdated(dto,updated);
+        repository.save(updated);
+    }
+
+    public void delete(Long idPessoa){
+        Optional<Pessoa> opt = repository.findById(idPessoa);
+        if(opt.isEmpty()){
+            throw new PessoaException(Arrays.asList("IdPessoa não encontrado!"));
+        }
+        repository.deleteById(idPessoa);
     }
 }

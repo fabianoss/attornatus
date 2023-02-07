@@ -7,4 +7,5 @@ public interface Builder<T,D>{
     List<T> listToDto(List<D> domains);
     D toDomain(T dto);
     List<D> listToDomain(List<T> dtos);
+    void toUpdated(T dto, D updated);
 }

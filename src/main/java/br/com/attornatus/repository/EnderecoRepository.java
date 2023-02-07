@@ -7,5 +7,5 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface EnderecoRepository extends JpaRepository<Long, Endereco>, CrudRepository<Long, Endereco> {
+public interface EnderecoRepository extends JpaRepository<Endereco,Long>, CrudRepository<Endereco,Long> {
 }

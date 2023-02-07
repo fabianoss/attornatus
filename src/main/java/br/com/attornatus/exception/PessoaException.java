@@ -1,4 +1,4 @@
-package br.com.attornatus;
+package br.com.attornatus.exception;
 
 import java.util.List;
 

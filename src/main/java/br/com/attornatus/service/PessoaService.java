@@ -1,7 +1,6 @@
 package br.com.attornatus.service;
 
-import br.com.attornatus.PessoaException;
-import br.com.attornatus.builder.impl.EnderecoBuilder;
+import br.com.attornatus.exception.PessoaException;
 import br.com.attornatus.builder.impl.PessoaBuilder;
 import br.com.attornatus.domain.Pessoa;
 import br.com.attornatus.dto.PessoaDTO;
